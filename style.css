@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;1,700&family=Montserrat:wght@500&family=Noto+Sans+Kawi&family=Open+Sans&family=Roboto+Mono:ital,wght@1,700&display=swap');
+
+/*  RESETS  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  VARIABLES  */
+
+:root {
+    --FF: 'Bebas Neue', sans-serif;
+    --FF1: 'Lora', serif;
+    --FF2: 'Montserrat', sans-serif;
+    --FF3: 'Noto Sans Kawi', sans-serif;
+    --FF4: 'Open Sans', sans-serif;
+    --FF5: 'Roboto Mono', monospace;
+    --FC: white
+}
+
+html {
+    font-size: 1rem;
+    font-family: var(--FF);
+    color: var(--FC);
+    background-color: aqua;
+}
+
+
+body {
+    scroll-behavior: smooth;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+input, button, textarea {
+    font: inherit;
+}
+
+/*  UTILS CLASSES  */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/*  GENERAL STYLES  */
+
+.header {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2rem;
+    position: relative;
+}
+
+
+.header__nav__nav {
+    transform-origin: right center;
+    display: none;
+    position: absolute;
+    top: 0;
+    /* background-color: #a26161; */
+    width: 100vw;
+    height: 100vh;
+    animation: showMenu 0.5s ease forwards;
+}
+
+.header__nav__nav ul {
+    display: block;
+    padding-top: 7rem;
+    float: right;
+    background-color: #000;
+    color: #fff;
+    width: 20%;
+    height: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: 1px solid red;
+}
+
+.header__nav__item__nav__ul li{
+    display: block;
+    margin: 1rem 3rem;
+    border-bottom: 1px solid white;
+    text-align: end;
+}
+
+
+@keyframes showMenu {
+    
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+.header__nav__item {
+    align-self: flex-start;
+}
+
+.header__nav__item:nth-child(2){
+    flex-grow: 2;
+}
+
+.header__nav__item:nth-child(3), .header__nav__item:first-child{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header__nav__item:first-child{
+    position: relative;
+    top: -3rem;
+    left: 2.5rem;
+}
+
+.header__nav__item__ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.header__nav__item__ul li{
+    padding:  0 1rem;
+}
+
+
+li, a:any-link{
+    list-style-type: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--FC);
+}
+
+a:any-link:hover, a:any-link:focus-within {
+    cursor: pointer;
+}
+
+.header__nav__item_3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: var(--FF1);
+}
+
+.conatiner__content {
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+}
+
+.conatiner__content:first-child{
+    background-image: url(img/pexels-spacex-586054.jpg);
+}
+.conatiner__content:nth-child(2){
+    background-image: url(img/pexels-spacex-60130.jpg);
+}
+
+.footer{
+    width: 100%;
+    background-color: black;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--FF);
+}
+
+.footer__item{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+}
+
+.conatiner__content__first,.conatiner__content__third__center{
+    position: relative;
+    top: 5rem;
+    left: 3.5rem;
+}
+
+.conatiner__content__first h1 ,.conatiner__content__third__center h1{
+    font-size: 2.5rem;
+}
+.conatiner__content__first__name {
+    margin-bottom: 1rem;
+}
+
+.conatiner__content__first__learn {
+    border: 1px solid white;
+    margin-top: 2.5rem;
+    text-align: center;
+    padding: 1rem;
+    width: 50%;
+}
+
+/* THIRD SECTION */
+
+.conatiner__content:last-child{
+    background-image: url(img/pexels-spacex-23769.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.conatiner__content__third{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-------------------------------------------------------------- ANIME BUTTON */
+
+
+.conatiner__content__first__learn {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+    color: #fff; /* Couleur du texte */
+    transition: color 0.3s; /* Transition pour la couleur du texte */
+  }
+  
+  .conatiner__content__first__learn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    bottom: 100%;
+    left: 0;
+    transition: height 0.3s;
+  }
+  
+  .conatiner__content__first__learn:hover::before {
+    height: 100%;
+    bottom: 0; /* Changement vers le bas */
+  }
+  
+
+  .conatiner__content__first__learn::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background: #fff;
+    top: 0;
+    left: 0;
+    transition: height 0.3s;
+  }
+
+  .conatiner__content__first__learn:hover::after {
+    height: 100%;
+    top: 100%; /* Changement vers le bas */
+  }
+
+  .conatiner__content__first__learn:hover{
+    color: #000; /* Couleur du texte lors du survol */
+  }
+
+  /*----------------------------------------------------------------- SURVOL UL LI */
+
+  .header__nav__item__ul li  {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff; /* Couleur du texte */
+    transition: color 0.3s; /* Transition pour la couleur du texte */
+  }
+
+  .header__nav__item__ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5%;
+    background: #fff;
+    bottom: 0;
+    left: 100%;
+    transition: width 0.3s;
+  }
+
+  .header__nav__item__ul li a:hover::before{
+    left: 0;
+    width: 100%;
+
+  }
+
+  .header__nav__item__ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5%;
+    background: #fff;
+    bottom: 0;
+    right: 0;
+    transition: width 0.3s;
+  }
+
+  .header__nav__item__ul li a:hover::after{
+    right: 100%;
+    width: 100%;
+  }
